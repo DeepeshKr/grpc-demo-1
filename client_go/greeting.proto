@@ -1,0 +1,84 @@
+syntax = "proto3";
+
+option go_package = ".";
+
+// Greeter service
+service Greeter {
+    // Sends a greeting
+    rpc greet (ClientInput) returns (ServerOutput) {}
+}
+
+// Input message for the greet RPC
+message ClientInput {
+    // Greeting message
+    string greeting = 1;
+
+    // Person's name
+    string name = 2;
+}
+
+// Output message for the greet RPC
+message ServerOutput {
+    // Response message
+    string message = 1;
+}
+
+// BookStore service
+service BookStore {
+    // Searches for a book
+    rpc first (BookSearch) returns (Book) {}
+}
+
+// Input message for the first RPC of BookStore service
+message BookSearch {
+    // Book's name
+    string name = 1;
+
+    // Book's author
+    string author = 2;
+
+    // Book's genre
+    string genre = 3;
+}
+
+// Output message for the first RPC of BookStore service
+message Book {
+    // Book's name
+    string name = 1;
+
+    // Book's author
+    string author = 2;
+
+    // Book's price
+    int32 price = 3;
+}
+
+// MovieClub service
+service MovieClub {
+    // Searches for a movie
+    rpc first (MovieSearch) returns (Movie) {}
+}
+
+// Input message for the first RPC of MovieClub service
+message MovieSearch {
+    // Movie's name
+    string name = 1;
+
+    // Movie's director
+    string director = 2;
+
+    // Movie's genre
+    string genre = 3;
+}
+
+// Output message for the first RPC of MovieClub service
+message Movie {
+    // Movie's name
+    string name = 1;
+
+    // Movie's director
+    string director = 2;
+
+    // Movie's rating
+    float rating = 3;
+}

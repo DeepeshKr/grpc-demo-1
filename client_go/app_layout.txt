@@ -1,0 +1,6 @@
+go-grpc-client/
+    ├── greeting.proto
+    ├── main.go
+    └── generated/
+        ├── greeting.pb.go
+        └── greeting_grpc.pb.go
